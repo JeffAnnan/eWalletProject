@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 
 import com.google.gson.Gson;
@@ -22,10 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //arrayList stockant les cartes pour la vue en scroll
     ArrayList<Model> models = new ArrayList<Model>();
-    RecyclerView rvTechSolPoint;
-    RvAdapter rvAdapter;
-    TextView tvAdd, tvUpdate;
-    EditText etEnterName;
+    RecyclerView cardTechSolPoint;
+    CardAdapter cardAdapter;
     int position;
     //cle pour l'intent et communiquer des donnees avec les autres activities
     final String EXTRA_TEXT="card_to_display";
@@ -37,12 +33,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //boutton ajouter carte
         final ImageView addButton=findViewById(R.id.img_add);
-        rvTechSolPoint = findViewById(R.id.rv_list_item);
-        rvTechSolPoint.setHasFixedSize(true);
+        cardTechSolPoint = findViewById(R.id.card_list_item);
+        cardTechSolPoint.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-        rvTechSolPoint.setLayoutManager(layoutManager);
-        rvAdapter = new RvAdapter(getApplicationContext(), models,
-                new RvAdapter.Onclick() {
+        cardTechSolPoint.setLayoutManager(layoutManager);
+        cardAdapter = new CardAdapter(getApplicationContext(), models,
+                new CardAdapter.Onclick() {
                     @Override
                     public void onEvent(Model model, int pos) {
                         position = pos;
@@ -54,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
         //on utilise un RecyclerView avec un Adapter
-        rvTechSolPoint.setAdapter(rvAdapter);
+        cardTechSolPoint.setAdapter(cardAdapter);
 
 
         //////// G E S T I O N   B D D //////B E L O W/////////
@@ -104,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Model model = gson.fromJson(String.valueOf(jsonObject), Model.class);
             //on stock ces cartes pour pouvoir les afficher et les adapter en "CardView" par la classe Adapter
             models.add(model);
-            rvAdapter.notifyDataSetChanged();
+            cardAdapter.notifyDataSetChanged();
 
         } catch (JSONException e) {
             e.printStackTrace();

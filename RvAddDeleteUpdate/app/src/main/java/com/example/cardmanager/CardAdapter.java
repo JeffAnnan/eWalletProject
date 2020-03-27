@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolder> {
+public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder> {
     Context context;
     ArrayList<Model> models;
     Onclick onclick;
@@ -20,7 +20,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolder> {
         void onEvent(Model model,int pos);
     }
 
-    public RvAdapter(Context context, ArrayList<Model> models, Onclick onclick) {
+    public CardAdapter(Context context, ArrayList<Model> models, Onclick onclick) {
         this.context = context;
         this.models = models;
         this.onclick = onclick;
@@ -29,15 +29,15 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolder> {
     View view;
 
     @Override
-    public RvAdapter.RvViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         view = inflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
-        RvViewHolder rvViewHolder = new RvViewHolder(view);
-        return rvViewHolder;
+        CardViewHolder cardViewHolder = new CardViewHolder(view);
+        return cardViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(RvAdapter.RvViewHolder holder, final int position) {
+    public void onBindViewHolder(CardViewHolder holder, final int position) {
         final Model model = models.get(position);
 
         if (model.getName() != null) {
@@ -74,13 +74,13 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolder> {
     }
 
     //RecyclerView pour pouvoir scroller er emppiler cartes
-    public class RvViewHolder extends RecyclerView.ViewHolder {
+    public class CardViewHolder extends RecyclerView.ViewHolder {
         TextView itemName;
         ImageView logoName;
         ImageView removeImg;
         LinearLayout llItem;
 
-        public RvViewHolder(View itemView) {
+        public CardViewHolder(View itemView) {
             super(itemView);
             itemName = itemView.findViewById(R.id.tv_name);
             logoName = itemView.findViewById(R.id.img_logoCard);
