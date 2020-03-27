@@ -1,4 +1,4 @@
-package com.example.cardupdate;
+package com.example.cardmanager;
 
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;

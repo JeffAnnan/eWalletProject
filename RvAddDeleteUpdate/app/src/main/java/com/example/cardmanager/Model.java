@@ -1,4 +1,4 @@
-package com.example.cardupdate;
+package com.example.cardmanager;
 
 public class Model {
     //classe qui modelise une carte pour la mettre dans le RecyclerView

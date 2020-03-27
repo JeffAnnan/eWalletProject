@@ -1,4 +1,4 @@
-package com.example.cardupdate;
+package com.example.cardmanager;
 
 import android.graphics.Color;
 import android.os.Bundle;

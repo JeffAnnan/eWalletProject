@@ -1,4 +1,4 @@
-package com.example.cardupdate;
+package com.example.cardmanager;
 
 import android.content.Context;
 import android.content.Intent;

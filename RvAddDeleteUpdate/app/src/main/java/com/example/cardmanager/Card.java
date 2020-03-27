@@ -1,4 +1,4 @@
-package com.example.cardupdate;
+package com.example.cardmanager;
 
 public class Card {
     //la classe d'une carte pour manipuler des objets
