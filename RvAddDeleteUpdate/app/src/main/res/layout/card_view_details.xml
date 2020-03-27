@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Ma carte"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFFFFF">
+        </TextView>
+
+        <TextView
+            android:id="@+id/cardName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="this is the cardName"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+        <ImageView
+            android:id="@+id/img_logoCard"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:padding="10dp"/>
+
+        <ImageView
+            android:id="@+id/img_barecode"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:id="@+id/barcodeNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="this is the barcodeNumber"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+        android:id="@+id/img_remove"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/remove_button"
+        android:layout_weight="50"
+        android:layout_gravity="bottom" />
+
+        <ImageView
+            android:id="@+id/img_home"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/home"
+            android:layout_weight="50"
+            android:layout_gravity="bottom"
+            android:tint="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/img_send"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/send_button"
+            android:layout_weight="50"
+            android:layout_gravity="bottom"
+            android:onClick="sendThisCard"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

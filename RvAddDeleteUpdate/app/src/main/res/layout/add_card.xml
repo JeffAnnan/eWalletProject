@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Ajouter une carte"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF">
+    </TextView>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="Scannez votre code barre ou saisissez le manuellement"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+
+    <ImageView
+        android:id="@+id/img_camera"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:src="@drawable/camera"
+        android:onClick="scanBarcode"/>
+
+    <EditText
+        android:id="@+id/inputBarcode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Saisissez le code barre"
+        android:inputType="text"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/inputCardName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Saisissez le nom de l'enseigne"
+        android:inputType="text"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/img_cancel"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/cancel"
+            android:layout_weight="50"
+            android:layout_gravity="bottom" />
+
+        <ImageView
+            android:id="@+id/img_submit"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/submit"
+            android:layout_weight="50"
+            android:layout_gravity="bottom" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
