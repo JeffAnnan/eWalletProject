@@ -1,7 +1,7 @@
-package com.example.rvadddeleteupdate;
+package com.example.cardupdate;
 
 public class Model {
-
+    //classe qui modelise une carte pour la mettre dans le RecyclerView
     public int id;
     public String name;
     public String logoName;

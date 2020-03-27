@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.rvadddeleteupdate"
+        applicationId "com.example.cardupdate"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -31,4 +31,5 @@ dependencies {
 
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+
 }

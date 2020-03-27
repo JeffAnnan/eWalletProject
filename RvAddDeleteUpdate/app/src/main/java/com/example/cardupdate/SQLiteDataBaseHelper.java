@@ -1,10 +1,11 @@
-package com.example.rvadddeleteupdate;
+package com.example.cardupdate;
 
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 
 public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
+    //classe peremttant de définir la table qui sera produite
     public static final String TABLE_NAME = "card_table";
     public static final String COL_IDCARD = "IDCARD";
     public static final String COL_CARDNAME = "CARDNAME";

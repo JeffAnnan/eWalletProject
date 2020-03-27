@@ -1,8 +1,6 @@
-package com.example.rvadddeleteupdate;
+package com.example.cardupdate;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import com.example.rvadddeleteupdate.MainActivity;
+
 
 public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolder> {
     Context context;
@@ -46,7 +43,6 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolder> {
         if (model.getName() != null) {
             //afficher les données de la carte dans le menu : nom + logo
             holder.itemName.setText(model.getName());
-            //System.out.println(model.getLogoName());
 
             //affecter les logos connus aux cartes (voir le dossier drawable pour voir les logo connus qui se mettront)
             //recherche de l'identifiant de l'image par le nom de la carte
@@ -63,15 +59,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolder> {
 
         }
 
-        /*
-        holder.removeImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                models.remove(position);
-                notifyDataSetChanged();
-            }
-        });
-        */
+        //listener sur une carte pour pouvoir clicer dessus et voir ses infos sur CardViewActivity
         holder.llItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +73,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolder> {
         return models.size();
     }
 
+    //RecyclerView pour pouvoir scroller er emppiler cartes
     public class RvViewHolder extends RecyclerView.ViewHolder {
         TextView itemName;
         ImageView logoName;

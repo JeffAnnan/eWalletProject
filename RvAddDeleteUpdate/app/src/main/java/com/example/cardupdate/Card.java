@@ -1,11 +1,11 @@
-package com.example.rvadddeleteupdate;
+package com.example.cardupdate;
 
 public class Card {
-
+    //la classe d'une carte pour manipuler des objets
     private Integer id;
     private String barCodeNumber;
     private String name;
-    private String adrLogo;
+    private String adrLogo; //nom du logo de l'enseigne drawable
 
     public Card(){};
 

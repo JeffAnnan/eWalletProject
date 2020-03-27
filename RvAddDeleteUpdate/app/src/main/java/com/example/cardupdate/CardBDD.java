@@ -1,4 +1,4 @@
-package com.example.rvadddeleteupdate;
+package com.example.cardupdate;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 
 public class CardBDD {
+    //classe qui gere l'insertion, la suppression, la modification et la recuperation de cartes dans la Base de Donnees
     private static final int VERSION_BDD=1;
     public static final String DATABASE_NAME = "card.db";
 
@@ -27,17 +28,21 @@ public class CardBDD {
         //On crée la BDD et sa table
         databaseSQLite = new SQLiteDataBaseHelper(context, DATABASE_NAME, null, VERSION_BDD);
     }
+
     public void open(){
         //on ouvre la BDD en écriture
         db = databaseSQLite.getWritableDatabase();
     }
+
     public void close(){
         //on ferme l'accès à la BDD
         db.close();
     }
+
     public SQLiteDatabase getDb(){
         return db;
     }
+
     public long insertCard(Card card){
         //Création d'un ContentValues (fonctionne comme une HashMap)
         ContentValues values = new ContentValues();
@@ -48,6 +53,7 @@ public class CardBDD {
         //on insère l'objet dans la BDD via le ContentValues
         return db.insert(TABLE_NAME,null,values);
     }
+
     public int updateCard(int id, Card card) {
         //La mise à jour d'une carte
         //on précise quelle carte on doit mettre à jour grâce à l'ID
@@ -57,38 +63,31 @@ public class CardBDD {
         values.put(COL_ADRLOGO, card.getAdrLogo());
         return db.update(TABLE_NAME,values,COL_IDCARD+" = "+id,null);
     }
+
+    //methode pour selectionner le dernier ID insere dans la base, un lastInsertId
     public int getHighestID() {
-
-
-
+        //on fait la requete
         String selectQuery = "SELECT * FROM card_table WHERE IDCARD = (SELECT MAX(IDCARD)  FROM card_table) ";
         Cursor cursor = db.rawQuery(selectQuery, null);
         cursor.moveToLast();
         int ID = cursor.getInt(0);
         cursor.close();
         return ID;
-
-/*
-        final String MY_QUERY = "SELECT MAX(IDCARD) FROM " + TABLE_NAME;
-        Cursor cur = db.rawQuery(MY_QUERY, null);
-        cur.moveToFirst();
-        int ID = cur.getInt(0);
-        cur.close();
-        return ID;
-
- */
     }
+
     public int removeCardWithID(int id){
-        //Suppression d'un livre de la BDD grâce à l'ID
+        //Suppression d'une Carte de la BDD grâce à l'ID
         return db.delete(TABLE_NAME, COL_IDCARD+" = "+id,null);
     }
+
     public Card getCardWithId(int bddIdCard){
         //On récupère dans un Cursor les valeurs correspondant à une carte contenue dans la BDD
-        //(ici on sélectionne la carte grâce à son numéro de codeBare)
+        //(ici on sélectionne la carte grâce à son ID en BDD)
         Cursor c = db.query(TABLE_NAME, new String[] {COL_IDCARD, COL_CARDNAME, COL_BARCODENUMBER,COL_ADRLOGO},
                 COL_IDCARD+" LIKE \'"+bddIdCard+"\'",null,null,null,null);
         return cursorToCard(c);
     }
+
     //Cette méthode permet de convertir un cursor en une carte
     private Card cursorToCard(Cursor c){
         //si aucun élément n'a été retourné dans la requête, on renvoie null
@@ -107,7 +106,7 @@ public class CardBDD {
         //On ferme le cursor
         c.close();
 
-        //On retourne le livre
+        //On retourne la carte
         return card;
     }
 }

@@ -18,9 +18,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        >
-
+        android:layout_marginBottom="30dp">
     </TextView>
 
     <android.support.v7.widget.RecyclerView
@@ -28,7 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-
     </android.support.v7.widget.RecyclerView>
 
 
@@ -36,13 +33,8 @@
         android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:layout_centerInParent="true"
-
         android:gravity="bottom|center"
-
         android:orientation="horizontal">
-
-
-
 
         <ImageView
             android:id="@+id/img_add"
@@ -50,47 +42,6 @@
             android:layout_height="wrap_content"
             android:src="@drawable/add_button"
             android:tint="@color/colorAccent" />
-<!--
-
-        <EditText
-            android:id="@+id/et_enter_name"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="#ffffff"
-            android:hint="Enter Name..."
-            android:paddingStart="10dp" />
-
-        <TextView
-            android:id="@+id/tv_add"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:text="ADD"
-            android:textColor="#ffffff"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_update"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:text="UPDATE"
-            android:textColor="#ffffff"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:visibility="gone" />
--->
     </LinearLayout>
 
 
